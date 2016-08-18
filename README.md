@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/saraemoore/ucbthesisrmd.svg?branch=master)](https://travis-ci.org/saraemoore/ucbthesisrmd)
+
 ### Prerequisites
 
 In short, this template requires XeLaTeX, [pandoc](http://pandoc.org/), and the [rmarkdown](https://cran.r-project.org/web/packages/rmarkdown/) R package.
