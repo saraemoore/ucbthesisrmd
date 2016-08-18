@@ -1,0 +1,5 @@
+name: UC Berkeley thesis or dissertation
+description: >
+ Template for authoring a thesis or dissertation to submit
+ at the University of California, Berkeley.
+create_dir: true

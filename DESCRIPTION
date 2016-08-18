@@ -1,0 +1,21 @@
+Package: ucbthesisrmd
+Type: Package
+Title: R Markdown template for the ucbthesis document class
+Version: 0.1
+Date: 2016-08-17
+Authors@R: person("Sara", "Moore", role = c("aut", "cre"), email = "sara.moore@berkeley.edu")
+URL: https://github.com/saraemoore/ucbthesisrmd
+BugReports: https://github.com/saraemoore/ucbthesisrmd/issues
+Description: This package provides a single R Markdown format/template,
+    ucbthesis. The PDF document template provided here utilizes the
+    ucbthesis LaTeX document class maintained and distributed by Paul Vojta.
+    This work also builds upon the ucbthesis R package.
+License: file LICENSE
+Imports:
+    rmarkdown
+Suggests:
+    pander,
+    ggplot2,
+    tikzDevice,
+    dagR
+RoxygenNote: 5.0.1

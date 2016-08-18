@@ -1,0 +1,72 @@
+\chapter{Duis Maximus}
+
+# Nam et Blandit Sapien
+
+Mauris tincidunt ut dolor eu pharetra. Integer ut ex in nisi suscipit bibendum. Etiam congue ut justo eget accumsan. Pellentesque tincidunt pellentesque purus auctor tristique. Vestibulum eu ante sed risus dapibus laoreet ut eu orci. Etiam et leo quis justo commodo tristique. Phasellus lacinia semper ex, ac molestie sem fermentum ac. Mauris nec consectetur justo. Suspendisse vitae ex porttitor, egestas felis a, hendrerit lorem. Suspendisse ut ex sem. Maecenas quam arcu, suscipit a venenatis sit amet, sollicitudin vitae nulla.[@waveshaping] Praesent ex mi, accumsan sit amet mauris efficitur, molestie bibendum nibh.
+
+Pellentesque leo orci, dignissim nec massa ut, porta blandit lectus. Proin eleifend libero scelerisque dui elementum pellentesque. Vivamus sit amet placerat purus, in vestibulum nulla. Nunc porta purus velit. Cras convallis rutrum faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.[^1] Ut quam lorem, egestas sed mi id, gravida lacinia quam. Donec consectetur urna quis quam consectetur pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed vitae metus pharetra, convallis ex sed, faucibus urna. Donec semper laoreet vestibulum. Phasellus sit amet purus varius nunc auctor euismod non ut magna. Maecenas sagittis quam eu risus suscipit, a lobortis enim viverra. Morbi tortor magna, blandit ac nunc eget, vulputate porta neque. Etiam semper molestie lectus.
+
+[^1]: Vestibulum eu eleifend nunc. Donec porta at dolor vel porta. In hac habitasse platea dictumst. Aliquam a nisi id orci sollicitudin porttitor. Duis lobortis volutpat neque, lobortis accumsan risus pretium ac. Aenean sed blandit magna, et gravida nisl. Phasellus viverra nulla vel nunc sodales consequat. Proin hendrerit justo et turpis vulputate, sit amet facilisis lectus tincidunt.
+
+## Sed in Consectetur Ex
+
+Vivamus egestas et lectus et varius. Maecenas id ipsum pharetra augue tristique vehicula. Phasellus sed sapien a orci lobortis rhoncus at ut justo. Nulla varius, sapien porta tempor tempor, sem tortor posuere risus, sit amet tempus dolor nisi accumsan elit. Aliquam sed risus sit amet ipsum pellentesque venenatis vitae a sapien. Nulla convallis orci quam, aliquet hendrerit augue tincidunt ut. Fusce condimentum turpis magna, a semper turpis lacinia sed. Sed dignissim gravida elit ac condimentum. Phasellus dui enim, consequat eget dignissim vel, auctor eu leo.
+
+> Nulla facilisis mi ut eros ullamcorper, non hendrerit dui pellentesque. Aenean enim dui, consectetur ac interdum non, ornare nec lectus. Aenean a orci justo. Maecenas elementum odio vestibulum dictum venenatis. Praesent in consectetur massa. In sollicitudin metus in arcu ultricies, non condimentum metus lacinia. Nam sit amet dignissim felis. Duis commodo, purus in pulvinar fermentum, metus lorem lobortis mauris, lobortis congue odio leo sit amet lacus. Sed et quam magna. Morbi vel auctor ex, eu sagittis neque. Phasellus euismod, massa vitae mattis sodales, turpis nisl consectetur erat, id tempus nisi nulla vel nunc.
+
+Praesent pellentesque pellentesque lacus. Praesent ac nulla nec magna pellentesque elementum vel vel magna. Donec ornare lacinia dapibus. Aliquam iaculis dolor nec nisi condimentum laoreet. Praesent convallis molestie tempus. Suspendisse efficitur tellus neque. Praesent id mauris nec velit dictum hendrerit. Phasellus ac dui nisl. Vestibulum sed mollis tortor, id accumsan tortor. Mauris interdum vitae mauris vitae aliquet. Nullam interdum nunc eu mi fermentum elementum. Morbi scelerisque, ligula lacinia sollicitudin pellentesque, nibh orci fringilla magna, ac auctor nunc enim in mauris. Nam volutpat ex dui, a condimentum diam facilisis eu. Fusce a augue laoreet, dictum risus nec, euismod dui.
+
+\begin{theorem}
+\tolerance=10000\hbadness=10000
+Vestibulum mollis pulvinar ex, sed pulvinar risus mollis id.
+\end{theorem}
+
+Proin eget magna quis leo vestibulum semper. Curabitur quis convallis felis. Etiam pulvinar risus vitae aliquam euismod. Duis odio erat, eleifend id gravida quis, congue id mauris. Cras at consectetur dolor. Sed dapibus ante nec bibendum mattis. Aenean mollis odio odio. Sed gravida libero dolor, vel luctus ipsum gravida vitae. Sed vitae massa consequat, consectetur neque non, bibendum augue.
+
+----------- ------- -------
+ LaTeX        yes     no
+ XeTeX        yes     yes
+ LuaTeX       no      no
+----------- ------- -------
+
+: Etiam vitae mauris arcu.
+
+Mauris quis gravida felis, id maximus ligula. Aenean malesuada eget urna eget imperdiet. Aliquam orci erat, iaculis quis auctor auctor, suscipit quis dui. Donec suscipit enim ac est efficitur, at tempor tellus lobortis. Ut euismod nisi a magna gravida, sit amet rutrum nibh congue. Pellentesque mattis consectetur nibh, id vehicula orci pharetra nec. Etiam congue diam neque, et convallis dolor elementum ut. Nam elementum molestie tellus ut cursus.
+
+```{r results = 'asis', echo=FALSE}
+data <- data.frame(
+	Mitre = c("Arabic", "Jail", "Discovery", "Marquis", "Indestructible", "Leavenworth"),
+	Enchantress = c("Spicebush", "Syndic", "Fame", "Regal", "Porterhouse", "Hidden"),
+	Hagstrom = c("Sapient", "Prevent", "Prognosticate", "Accusation", "Sofia", "Benedictine"),
+	Atlantica = c("Chaos", "Ballerina", "Corroborate", "Dichotomy", "Cavalier", "Vivacious"),
+	Martinez = c("Conquer", "Canker", "Bartend", "Soprano", "Trance", "Utensil"),
+	stringsAsFactors = FALSE)
+pander::pandoc.table(data, justify = 'center',
+	caption = "Utensil wallaby Juno titanium.")
+```
+
+Integer accumsan nisi sed lectus accumsan hendrerit. Mauris vitae massa tortor. Sed vel scelerisque orci. Phasellus consectetur consectetur maximus. Integer est felis, tempor sed molestie quis, sollicitudin ullamcorper ex. Pellentesque odio lectus, scelerisque quis accumsan at, hendrerit sit amet urna. Duis sapien tortor, rhoncus[@cmusic] nec finibus nec, ornare at magna. Vestibulum dignissim, dui sed egestas egestas, sem tellus convallis eros, in feugiat diam arcu vitae nulla. Vivamus quis ipsum ac risus vehicula auctor eu ut mauris.
+
+```{r echo=FALSE, dev='tikz', fig.width=4, fig.cap="Maecenas tempus neque et sapien gravida dapibus. Nulla in justo posuere, consectetur augue eu, pellentesque purus."}
+library(tikzDevice)
+options(tikzDefaultEngine = "xetex")
+
+library(dagR)
+invisible(dag.draw(demo.dag1()))
+```
+
+Vivamus lacinia odio elementum, viverra velit nec, ullamcorper leo. Aliquam pellentesque risus sit amet ipsum egestas lobortis. In non purus in arcu viverra finibus eget nec est. Vestibulum ac faucibus odio, sed posuere mi. Mauris finibus orci nec consequat venenatis. Nam enim erat, lacinia ac elit ut, vestibulum sagittis felis.[@fm] Curabitur in tortor nec ipsum luctus facilisis. Curabitur eleifend augue nec ante malesuada molestie. Etiam pulvinar vitae leo sed euismod. Morbi vestibulum pellentesque pulvinar.
+
+* Donec suscipit erat vitae hendrerit mattis.
+* Integer mollis massa ullamcorper magna interdum, vel sodales quam interdum.
+* Praesent eu risus eu libero porttitor molestie sodales quis mauris.
+* Cras tincidunt lorem eget urna semper vestibulum.
+* Proin feugiat tellus ac risus molestie, vitae tempus diam pharetra.
+* Ut sollicitudin leo eget neque iaculis, vel blandit mi pellentesque.
+
+Quisque tincidunt commodo metus, in feugiat felis blandit et. Quisque id mi vestibulum, fermentum neque id, fringilla arcu. Phasellus maximus, magna pulvinar viverra mollis, leo enim dapibus dolor, eu fringilla risus quam eget tortor. Cras a dictum libero, vitae molestie libero. Morbi pulvinar bibendum eros. In felis turpis, auctor sagittis blandit non, gravida vel ante. Donec nec massa mauris. Donec aliquet aliquam massa, vel pellentesque enim tempor vel. In sodales a sapien a cursus. Etiam laoreet odio non libero feugiat posuere quis ut risus. Nunc et quam eu dui maximus porttitor. Aenean at lorem quis tortor molestie venenatis non in neque. Nunc efficitur neque fermentum consectetur semper. Nunc sollicitudin nec mauris vitae imperdiet.
+
+\begin{theorem}
+\tolerance=10000\hbadness=10000
+Nunc in ipsum odio. Nam dapibus nunc mattis, bibendum lorem vitae, molestie erat. Vestibulum vehicula id ipsum in volutpat.
+\end{theorem}

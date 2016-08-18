@@ -1,0 +1,67 @@
+---
+title: Compiling Real-Time Digital Signal Processing Applications on Multiprocessor Systems
+author: Jennifer Jane Johnson
+degreesemester: Fall
+degreeyear: 2016
+degree: Doctor of Philosophy
+degree_short: phd                  # masters, phd, or oldmasters
+chair: Professor Jane D. Doe
+othermembers:
+  - Professor John Smith
+  - Associate Professor Herman Jones
+numberofmembers: 3
+field: Biostatistics
+emphasis: Computational Science and Engineering           # optional - remove if not using
+jointinstitution: University of California, San Francisco # optional - remove if not using
+campus: Berkeley                                          # optional
+bibliography: references.bib
+biblio-style: numeric
+biblatexoptions:
+  - backend=biber
+biblio-title: Bibliography
+approvalpage: yes  # TURN THIS OFF FOR FINAL SUBMITTED DRAFT
+doublespaced: no
+indentfirst: no
+usesections: no
+toc: yes           # table of contents is optional. to omit, change this to 'no'
+toc-depth: 2
+lof: yes           # list of figures is optional. to omit, change this to 'no'
+lot: yes           # list of tables is optional. to omit, change this to 'no'
+abstract:  |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt felis nisi, in auctor ipsum iaculis ac. Vestibulum ultricies nec dui in volutpat. Sed in metus ac elit ultrices accumsan vitae eu risus. Nullam eget turpis at mi pellentesque hendrerit vitae eget augue. Proin enim purus, finibus a tempor eu, congue nec quam. Nam quis nulla vitae ante ultricies facilisis et vitae eros. Duis laoreet, quam nec mattis finibus, arcu quam mollis est, ut consectetur sem nulla vitae mauris. Nulla facilisi. Praesent et mollis massa. Nam pellentesque purus hendrerit felis placerat hendrerit. Duis aliquet blandit convallis. Phasellus lacus magna, molestie sit amet turpis eget, condimentum rhoncus nibh. Nam sed imperdiet dui. Proin tincidunt sagittis condimentum.
+
+  Integer semper leo ut ex tincidunt blandit. Donec rutrum orci eu ipsum bibendum facilisis. Duis posuere vestibulum tempor. Aliquam a justo id metus mollis dapibus. Etiam urna velit, feugiat non massa eget, venenatis tempus ex. Ut mattis pretium magna nec porta. Duis pulvinar mi tellus, quis laoreet urna tincidunt in. In cursus rhoncus leo, sed congue risus. Suspendisse non congue risus. Phasellus viverra volutpat varius. Integer ac ex vel magna pellentesque rutrum. Nulla lobortis varius molestie. Maecenas ultricies ligula sit amet vulputate posuere. Phasellus dapibus tortor sit amet lacinia aliquet.
+
+  Donec blandit, leo et molestie accumsan, mi eros imperdiet erat, laoreet sodales tortor lectus ac turpis. Nam pharetra massa id purus efficitur fermentum. Etiam tincidunt erat eget libero varius, in vehicula eros maximus. In et massa congue, fermentum dui in, viverra elit. Nulla pharetra hendrerit elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque cursus in mi malesuada ultrices. Mauris vestibulum ex sed risus suscipit venenatis.
+dedication: > # dedication is optional. to omit, remove this yaml field.
+  To Ossie Bernosky$\vspace{\baselineskip}\linebreak$
+
+  Integer felis eros, auctor ut feugiat sit amet, vestibulum et mauris.
+  Donec id mauris dignissim, condimentum ex eu, pulvinar odio.
+  Duis tempor dapibus purus, eget placerat diam auctor vel.
+  Nullam sit amet dictum nunc. Suspendisse potenti.
+  Integer vel eros tortor. Sed aliquam vulputate lobortis.
+  In commodo gravida velit, at venenatis magna rutrum non.
+acknowledgements: | # acknowledgements are optional. to omit, remove this yaml field.
+  I'd like to thank my advisor for advising me.
+header-includes:
+  - \def\ci{\perp\!\!\!\perp}
+  - \newtheorem{theorem}{Lorem Ipsum}
+  - \hyphenation{mar-gin-al-ia}
+output: ucbthesisrmd::ucbthesis
+---
+
+<!-- (Optional) \part{First Part} -->
+
+<!-- add links to more chapter Rmd files here as needed -->
+
+```{r, cache=FALSE, child="chap1.Rmd"}
+```
+
+```{r, cache=FALSE, child="chap2.Rmd"}
+```
+
+<!--
+\appendix
+\chapter{More Monticello Candidates}
+-->

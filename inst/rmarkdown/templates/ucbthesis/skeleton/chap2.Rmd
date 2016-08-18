@@ -1,0 +1,31 @@
+\chapter{Pellentesque Sollicitudin}
+
+# Phasellus Vitae Convallis
+
+In at scelerisque metus. Duis quis faucibus leo. Vivamus tempus mauris a tellus faucibus, id ultricies massa vehicula. Nunc maximus vitae nisi vitae malesuada. Aliquam porta accumsan leo, quis vestibulum lectus faucibus consectetur. Mauris quis scelerisque mauris, non porta felis. Sed quis mollis quam. Sed suscipit tellus enim, id feugiat dui consectetur at. Suspendisse ultrices dolor ac ex molestie venenatis. Mauris quis mi ligula. Phasellus sed metus velit. Quisque sit amet eleifend metus. Ut eu gravida leo. Proin id eros non nibh tempus hendrerit.
+
+```{r echo=FALSE, dev='tikz', fig.cap="Praesent dapibus est in nulla pretium malesuada. Sed tempor, eros."}
+library(tikzDevice)
+options(tikzDefaultEngine = "xetex")
+
+library(ggplot2)
+ggplot(mtcars) +
+	geom_point(aes(x = wt, y = mpg, colour=factor(gear))) +
+	facet_grid(. ~ am) +
+	theme_light() +
+	theme(legend.position = "bottom")
+```
+
+Proin sed purus vel eros aliquet pulvinar in in augue. Fusce turpis tellus, dictum sit amet lorem vel, ultrices auctor quam. Sed molestie mi ut sem ornare, et ornare quam molestie. Suspendisse tincidunt accumsan nibh at pulvinar. Proin nec vulputate turpis. Nunc sed erat vitae nibh volutpat bibendum. Vivamus eu sapien purus. Aliquam varius quam in nunc mattis accumsan. Aenean tellus libero, molestie vitae pharetra quis, scelerisque a lacus. Cras ullamcorper eu turpis quis mollis.
+
+Phasellus hendrerit velit eget nibh hendrerit, nec consequat nisl consequat. Donec tortor dui, sagittis quis convallis sed, finibus nec libero. Sed fringilla a arcu eget porta. Nulla ultricies semper sagittis. Nunc id imperdiet quam, at sagittis ante. Pellentesque tincidunt hendrerit sapien, elementum euismod purus dictum a. Pellentesque semper luctus leo id faucibus. Nullam ultrices arcu sit amet dictum sagittis. Nullam vitae convallis ligula, in aliquam erat. Donec nibh ligula, tristique sed ante in, egestas rutrum libero. Ut sagittis neque vel tortor varius consectetur. Mauris ac eleifend ex. Vestibulum euismod malesuada tortor, sit amet blandit ex finibus sit amet. Suspendisse a malesuada ipsum, non mollis massa. Nullam facilisis diam id dui egestas ullamcorper.
+
+# Aliquam Consequat Erat
+
+Vestibulum et dui eget nunc auctor dapibus. Vestibulum sem neque, accumsan eu consectetur vel, tincidunt at odio. Nulla vitae malesuada mauris. Cras mauris urna, tempus eu velit ac, tristique auctor libero. Nulla ac viverra justo. Nulla mattis elit quam, quis placerat augue pulvinar in. Aenean vel auctor ex.
+
+# Phasellus ac Odio
+
+Proin egestas urna at nunc faucibus placerat. Morbi a nibh lacus. Sed placerat tellus at egestas accumsan. Sed quis arcu vitae felis ultrices placerat. Morbi efficitur sapien eget tortor hendrerit, et pellentesque libero aliquam. Suspendisse ipsum arcu, ornare vitae nulla vel, sagittis blandit mauris. Integer imperdiet tempor lobortis. Duis efficitur luctus mi, a porta neque venenatis nec. Quisque massa sapien, venenatis ut semper vestibulum, dictum id risus.
+
+In quis nisl vitae mi malesuada dignissim nec id eros. Cras quis felis non risus accumsan dictum eget quis dolor. Phasellus tincidunt ante metus, vitae gravida justo lobortis quis. Donec aliquam elit quis consectetur mollis. Quisque quis mollis ante. Sed eu pellentesque sapien. Morbi tellus nisi, laoreet eget vestibulum in, porttitor et dolor. Ut sem felis, suscipit non tincidunt eget, volutpat a nibh.

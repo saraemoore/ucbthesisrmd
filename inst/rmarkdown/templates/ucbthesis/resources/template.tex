@@ -1,0 +1,342 @@
+\documentclass[$if(degree_short)$$degree_short$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{ucbthesis}
+
+$if(fontfamily)$
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+
+% Double spacing, if you want it. Do not use for the final copy.
+$if(doublespaced)$
+\def\dsp{\def\baselinestretch{2.0}\large\normalsize}
+\dsp
+$endif$
+
+% If the Grad. Division insists that the first paragraph of a section
+% be indented (like the others), then include this:
+$if(indentfirst)$
+\usepackage{indentfirst}
+$endif$
+
+%%%%%%%%%%%%%%%%%%
+% If you want to use "sections" to partition your thesis:
+$if(usesections)$
+\counterwithout{section}{chapter}
+\setsecnumdepth{subsubsection}
+\def\sectionmark#1{\markboth{#1}{#1}}
+\def\subsectionmark#1{\markboth{#1}{#1}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\makeatletter
+\let\l@subsection\l@section
+\let\l@section\l@chapter
+\makeatother
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+$endif$
+%%%%%%%%%%%%%%%%%%
+
+\usepackage{amssymb,amsmath}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{mathspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+$for(fontfamilies)$
+  \newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
+$endfor$
+$if(mainfont)$
+    \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+$endif$
+$if(sansfont)$
+    \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+$endif$
+$if(monofont)$
+    \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
+$endif$
+$if(mathfont)$
+    \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+$endif$
+$if(CJKmainfont)$
+    \usepackage{xeCJK}
+    \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+$endif$
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+$if(title-meta)$
+            pdftitle={$title-meta$},
+$endif$
+$if(author-meta)$
+            pdfauthor={$author-meta$},
+$endif$
+$if(keywords)$
+            pdfkeywords={$for(keywords)$$keywords$$sep$; $endfor$},
+$endif$
+            colorlinks=false,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+$if(natbib)$
+\usepackage{natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$endif$
+
+$if(biblatex)$
+\usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
+$endif$
+
+$if(listings)$
+\usepackage{listings}
+$endif$
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+
+$if(graphics)$
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+
+$if(subparagraph)$
+$else$
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+$endif$
+
+$if(dir)$
+  % load bidi as late as possible as it modifies e.g. graphicx
+  $if(latex-dir-rtl)$
+  \usepackage[RTLdocument]{bidi}
+  $else$
+  \usepackage{bidi}
+  $endif$
+$endif$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% additional preamble specifications go here, such as theorems or hyphenation:
+$for(header-includes)$
+$header-includes$
+$endfor$
+% (these are examples and can be removed from the yaml header if not used)
+
+\begin{document}
+
+\title{$title$}
+\author{$author$}
+\degreesemester{$degreesemester$}
+\degreeyear{$degreeyear$}
+\degree{$degree$}
+
+$if(chair)$
+\chair{$chair$}
+$endif$
+
+$if(cochair)$
+\cochair{$cochair$}
+$endif$
+
+$if(cochairs)$
+\cochairs{$cochairs$}
+$endif$
+
+\othermembers{
+$for(othermembers)$
+$for(othermembers)$
+$othermembers$\\
+$endfor$
+$endfor$
+\vspace{14pt}
+}
+
+\numberofmembers{$numberofmembers$}
+\field{$field$}
+
+$if(emphasis)$
+\emphasis{$emphasis$}
+$endif$
+
+$if(jointinstitution)$
+\jointinstitution{$jointinstitution$}
+$endif$
+
+$if(campus)$
+\campus{$campus$}
+$endif$
+
+\maketitle
+
+$if(approvalpage)$
+\approvalpage
+% ^^ DO NOT include this when compiling your final draft
+$endif$
+
+\copyrightpage
+
+\begin{abstract}
+
+% If your abstract is complex, place the text here with LaTeX formatting
+% and remove the 'abstract' field from the YAML header in the main file.
+% If you need to use a \section command in your abstract, you will need
+% to use \section*, \subsection*, etc. so that you don't get any numbering.
+% Sections are optional but not disallowed in abstracts for a thesis or
+% dissertation to be submitted to the Graduate Degrees Office at UC Berkeley.
+
+$if(abstract)$
+$abstract$
+$endif$
+
+\end{abstract}
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+
+\begin{frontmatter}
+
+$if(dedication)$
+{
+\begin{dedication}
+\null\vfil
+\begin{center}
+$dedication$
+\end{center}
+\vfil\null
+\end{dedication}
+}
+$endif$
+
+$if(toc)$
+	\setcounter{tocdepth}{$toc-depth$}
+	\tableofcontents
+	$if(lof)$
+		\clearpage
+		\listoffigures
+		$if(lot)$
+			\clearpage
+			\listoftables
+		$endif$
+	$else$
+		$if(lot)$
+			\clearpage
+			\listoftables
+		$endif$
+	$endif$
+$else$
+	$if(lof)$
+		\listoffigures
+		$if(lot)$
+			\clearpage
+			\listoftables
+		$endif$
+	$else$
+		$if(lot)$
+			\listoftables
+		$endif$
+	$endif$
+$endif$
+
+$if(acknowledgements)$
+{
+\begin{acknowledgements}
+$acknowledgements$
+\end{acknowledgements}
+}
+$endif$
+
+\end{frontmatter}
+
+\pagestyle{headings}
+
+$body$
+
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+\renewcommand\bibname{$biblio-title$}
+$endif$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+
+$endif$
+$endif$
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+
+$for(include-after)$
+$include-after$
+
+$endfor$
+
+\end{document}
