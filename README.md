@@ -54,7 +54,7 @@ The sample document shipped with the ucbthesisrmd package can be rendered withou
 * [pander](https://cran.r-project.org/web/packages/pander/index.html),
 * [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html),
 * [tikzDevice](https://cran.r-project.org/web/packages/tikzDevice/index.html), and
-* [dagR](https://cran.r-project.org/web/packages/dagR/index.html)
+* [dagR](https://cran.r-project.org/web/packages/dagR/index.html).
 
 ```r
 install.packages(c("pander", "ggplot2", "tikzDevice", "dagR"))
