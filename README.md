@@ -39,7 +39,7 @@ A new directory (here called 'my_thesis') will be created by default. Within thi
 
 (You'll also see a LaTeX class file, ucbthesis.cls, in this directory -- you won't need to modify this file.)
 
-To customize this document for your thesis or dissertation, modify the YAML header in the main R Markdown document. Also in this file, add (or remove) links to child documents like chapters, an introduction, or a conclusion. Put your manuscript in the child document(s) using either R Markdown or LaTeX syntax. Your bibliographic references can go into references.bib, and further bibliography options can be set in the YAML header.
+To customize this document for your thesis or dissertation, modify the YAML header in the main R Markdown document. Also in this file, add (or remove) links to child documents like chapters, an introduction, or a conclusion. Put your manuscript in the child document(s) using either (R) Markdown or TeX syntax. Your bibliographic references can go into references.bib, and further bibliography options can be set in the YAML header.
 
 To render the document:
 
