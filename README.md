@@ -26,12 +26,12 @@ devtools::install_github("saraemoore/ucbthesisrmd")
 To create a new R Markdown document using the **ucbthesis** template, use the `rmarkdown::draft` function:
 
 ```r
-rmarkdown::draft("/path/to/my_thesis.Rmd", template = "ucbthesis", package = "ucbthesisrmd")
+rmarkdown::draft("/path/to/my_thesis.Rmd", template = "ucbthesis", package = "ucbthesisrmd", edit = FALSE)
 ```
 
 Alternatively, if using RStudio, begin a new document using this template by going to "File > New File > R Markdown..."
 
-A new directory (here called 'my_thesis') will be created by default. Within this directory, you'll find four files that you can and should modify:
+A new directory (here called 'my_thesis') will be created by default (to suppress this, add `create_dir = FALSE` to the call to `rmarkdown::draft()`) in the parent directory you specified (in the toy example above, `/path/to/`). Within this directory, you'll find four files that you can and should modify:
 
 * the main R Markdown document ('my_thesis.Rmd'),
 * two sample chapters ('chap1.Rmd' and 'chap2.Rmd') -- also referred to below as child documents -- and
@@ -62,6 +62,27 @@ The sample document shipped with the ucbthesisrmd package can be rendered withou
 install.packages(c("pander", "ggplot2", "tikzDevice", "dagR"))
 ```
 
+### Advanced
+
+Several LaTeX packages are preloaded by this template. To see which ones are included, take a look at [template.tex](https://github.com/saraemoore/ucbthesisrmd/blob/master/inst/rmarkdown/templates/ucbthesis/resources/template.tex) in this repository. This additional configuration of packages is based on my usage of this template. If you discover problems with this configuration, please [report them](https://github.com/saraemoore/ucbthesisrmd/issues) or [submit a pull request](https://github.com/saraemoore/ucbthesisrmd/pulls) so the template can be modified for you and for future users.
+
+You can use the `header-includes` field in the YAML header of the main R Markdown file to load additional LaTeX packages or add other declarations to the LaTeX document's preamble. A few examples have been included to give you an idea of how that field works.
+
+To change `fig_width` (7 inches by default), `fig_height` (5 inches by default), `highlight` ("pygments" by default), or `citation_package` ("biblatex" by default), add these as subitems under `output: ucbthesisrmd::ucbthesis` in the main document's YAML header, like so:
+
+```
+output:
+  ucbthesisrmd::ucbthesis:
+    fig_width: 6
+    fig_height: 4
+    highlight: default
+    citation_package: natbib
+```
+
+All other (available) fields can be set at the top level of the YAML header of the main document, with the exception of `latex_engine`. This field is set to `xelatex` in the R Markdown format `ucbthesisrmd::ucbthesis` and cannot be changed. If this causes a problem for you, [report it as an issue](https://github.com/saraemoore/ucbthesisrmd/issues) and we can discuss.
+
+A full list of available YAML fields for this template is not included here, but many of them are used as examples in the provided document, and most others can be discovered by taking a look at [template.tex](https://github.com/saraemoore/ucbthesisrmd/blob/master/inst/rmarkdown/templates/ucbthesis/resources/template.tex) in this repository.  Most of the fields available for `rmarkdown::pdf_document()` are available here, as well, along with a few new fields.
+
 ### Background
 
-This package provides a single [R Markdown](http://rmarkdown.rstudio.com) format/template, **ucbthesis**. This is based on the ucbthesis LaTeX document classes for [PhD dissertations](https://math.berkeley.edu/~vojta/tex/ucbthesis-phd.html) and [Master's theses](https://math.berkeley.edu/~vojta/tex/ucbthesis-masters.html) maintained and distributed by Paul Vojta. This package also builds upon/brings up-to-date features available in Steven Pollack's [ucbthesis R package](https://github.com/stevenpollack/ucbthesis).
+This package provides an [R Markdown](http://rmarkdown.rstudio.com) template and format, both named **ucbthesis**. This template is built on the ucbthesis LaTeX document class for [PhD dissertations](https://math.berkeley.edu/~vojta/tex/ucbthesis-phd.html) and [Master's theses](https://math.berkeley.edu/~vojta/tex/ucbthesis-masters.html) maintained and distributed by Paul Vojta. This package also builds upon/brings up-to-date features available in Steven Pollack's [ucbthesis R package](https://github.com/stevenpollack/ucbthesis).
