@@ -5,7 +5,7 @@ degreesemester: Fall
 degreeyear: 2016
 degree: Doctor of Philosophy
 degree_short: phd                  # masters, phd, or oldmasters
-chair: Professor Jane D. Doe
+chair: Professor Jane D. Doe       # alternatively, use 'chair'+'cochair' or 'cochairs' field(s)
 othermembers:
   - Professor John Smith
   - Associate Professor Herman Jones
