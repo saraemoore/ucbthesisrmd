@@ -75,21 +75,4 @@ In RStudio, if preferred, use either the "Knit" button or the keyboard shortcut 
 
 ### Advanced
 
-Several LaTeX packages are preloaded by this template. To see which ones are included, take a look at [template.tex](https://github.com/saraemoore/ucbthesisrmd/blob/master/inst/rmarkdown/templates/ucbthesis/resources/template.tex) in this repository. This additional configuration of packages is based on my usage of this template. If you discover problems with this configuration, please [report them](https://github.com/saraemoore/ucbthesisrmd/issues) or [submit a pull request](https://github.com/saraemoore/ucbthesisrmd/pulls) so the template can be modified for you and for future users.
-
-You can use the `header-includes` field in the YAML header of the main R Markdown file to load additional LaTeX packages or add other declarations to the LaTeX document's preamble. A few examples have been included to give you an idea of how that field works.
-
-To change `fig_width` (7 inches by default), `fig_height` (5 inches by default), `highlight` ("pygments" by default), or `citation_package` ("biblatex" by default), add these as subitems under `output: ucbthesisrmd::ucbthesis` in the main document's YAML header, like so:
-
-```
-output:
-  ucbthesisrmd::ucbthesis:
-    fig_width: 6
-    fig_height: 4
-    highlight: default
-    citation_package: natbib
-```
-
-All other (available) fields can be set at the top level of the YAML header of the main document, with the exception of `latex_engine`. This field is set to `xelatex` in the R Markdown format `ucbthesisrmd::ucbthesis` and cannot be changed. If this causes a problem for you, [report it as an issue](https://github.com/saraemoore/ucbthesisrmd/issues) and we can discuss.
-
-A full list of available YAML fields for this template is not included here, but many of them are used as examples in the provided document, and most others can be discovered by taking a look at [template.tex](https://github.com/saraemoore/ucbthesisrmd/blob/master/inst/rmarkdown/templates/ucbthesis/resources/template.tex) in this repository.  Most of the fields available for `rmarkdown::pdf_document()` are available here, as well, along with a few new fields.
+See the [wiki](https://github.com/saraemoore/ucbthesisrmd/wiki) for advanced usage of this package.
