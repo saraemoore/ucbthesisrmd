@@ -1,5 +1,5 @@
-%% ucbthesis.cls 2014-04-11
-%% Copyright (C) 1988-2014 Daniel Gildea, BBF, Ethan Munson, Paul Vojta.
+%% ucbthesis.cls 2019-07-19
+%% Copyright (C) 1988-2019 Daniel Gildea, BBF, Ethan Munson, Paul Vojta.
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -20,8 +20,8 @@
 %%% ====================================================================
 %%%  @LaTeX-class-file{
 %%%     filename        = "ucbthesis.cls",
-%%%     version         = "3.4",
-%%%     date            = "11 April 2014",
+%%%     version         = "3.6",
+%%%     date            = "19 July 2019",
 %%%     license         = "LPPL",
 %%%     codetable       = "ISO/ASCII",
 %%%     keywords        = "LaTeX, ucbthesis",
@@ -108,6 +108,14 @@
 %%%			   dissertation/thesis committee, joint degrees, and
 %%%			   degrees with a Designated Emphasis.
 %%%
+%%%			   Version 3.5 adds the designated emphasis to the
+%%%			   abstract (which is required).
+%%%
+%%%			   Version 3.6 changes the title from bold font to
+%%%			   regular and adjusts the spacing in the abstract page.
+%%%			   It adds \cochairs to the documentation and makes some
+%%%			   fixes and adds some material to the example thesis.
+%%%
 %%%			   A problem that some people have had is
 %%%			   that you can't use \pagestyle{headings}
 %%%			   and \markboth if you use \part.  The solution
@@ -117,7 +125,7 @@
 %%% ====================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ucbthesis}[2014/04/11 v3.4 University of California, Berkeley Thesis Class]
+\ProvidesClass{ucbthesis}[2019/07/19 v3.6 University of California, Berkeley Thesis Class]
 
 %    ****************************************
 %    *               OPTIONS                *
@@ -355,7 +363,7 @@
 \def\emphasis#1{\gdef\@emphasis{#1}}
 
 % The name of your UC Campus (e.g. Berkeley, Los Angeles)
-\def\@campus{Berkeley}	% default value is Berkeley
+\def\@campus{Berkeley}  % default value is Berkeley
 \def\campus#1{\gdef\@campus{#1}}
 
 % The alwayssingle environment ensures that front matter is always
@@ -395,7 +403,7 @@
 
   \begin{center}
     \fmfont
-    \textbf{\@title}\par
+    \@title\par
     \vspace{14pt minus 4pt}
     by \par
     {\@author}\par
@@ -502,7 +510,7 @@ The \@dissertation of {\@author}, titled {\@title}, is approved:
 \thispagestyle{empty}
 \begin{center}
 {\fmfont
-{\bfseries\@title}\par
+\@title\par
 \vspace{1in}
 Copyright \@degreeyear\par
 by\par
@@ -518,36 +526,33 @@ by\par
 % of the rest of the dissertation in Arabic.  It requires definition
 % of the \title, \author, \degree, \field, \campus, and \chair macros.
 
-\def\abstract{
-\begin{alwayssingle}
-% \pagestyle{simple}
-\thispagestyle{simple}
-\setcounter{page}{1}
-\begin{center}
-{\fmfont
-{\bfseries \abstractname}\par
-\vspace{.5in}
-\@title\par
-\vspace{.1in}
-by\par
-\vspace{.1in}
-\@author\par
-\vspace{.1in}
-{\@degree} in \@field\par
-\vspace{.1in}
-University of California, {\@campus}\par
-\vspace{.1in}
-{\@chair}, \@chairtitle
-\ifdefined\@cochair
-  \par
-  \vspace{.1in}
-  {\@cochair}, Co-chair
-\fi}
-\vspace{.1in}
-\end{center}}
-
-\def\endabstract{\par\vfil\null\end{alwayssingle}
-}
+\renewenvironment{abstract}
+  {\begin{alwayssingle}
+    % \pagestyle{simple}
+    \thispagestyle{simple}
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{\baselineskip}
+    \setcounter{page}{1}
+    \begin{center}
+      \abstractname \par
+      \@title\par
+      by\par
+      \@author\par
+      {\@degree} in \@field\par
+          \ifdefined\@emphasis
+            and the Designated Emphasis in\par
+            {\@emphasis}\par
+          \fi
+      University of California, {\@campus}\par
+      {\@chair}, \@chairtitle \par
+      \ifdefined\@cochair
+        {\@cochair}, Co-chair\par
+      \fi
+    \end{center}
+    \setlength{\parskip}{.6\baselineskip}
+    \vspace{.4\baselineskip}
+  }
+  {\par\end{alwayssingle}}
 
 % The abstract is no longer signed (12/2009)
 %
